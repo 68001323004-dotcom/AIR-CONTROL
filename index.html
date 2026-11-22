@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#091321">
+<title>AIR CONTROL | Smart Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">❄</div><div>AIR CONTROL<span class="sub">SMART HOME SYSTEM</span></div></div>
+    <div class="status" id="connection">● DEMO MODE</div>
+  </header>
+  <h1>ควบคุมเครื่องปรับอากาศ</h1>
+  <p class="intro">ระบบควบคุมแอร์อัจฉริยะ · 1 วงจร</p>
+
+  <main class="layout">
+    <section class="card">
+      <div class="cardhead"><span>AIR CONDITIONER</span><span class="tag" id="stateTag">ปิดอยู่</span></div>
+      <div class="hero">
+        <div class="snow">❄</div>
+        <div class="temp"><span id="temp">25</span><small>°C</small></div>
+        <div class="caption">TEMPERATURE SETTING</div>
+      </div>
+      <button class="power off" id="powerBtn">⏻ &nbsp; เปิดเครื่องปรับอากาศ</button>
+      <div class="controls">
+        <div class="control">
+          <div class="label">อุณหภูมิที่ต้องการ</div>
+          <div class="stepper"><button id="minus" aria-label="ลดอุณหภูมิ">−</button><span class="value"><span id="temp2">25</span>°C</span><button id="plus" aria-label="เพิ่มอุณหภูมิ">+</button></div>
+        </div>
+        <div class="control">
+          <div class="label">ความเร็วพัดลม</div>
+          <select class="select" id="fan"><option>AUTO</option><option>LOW</option><option>MEDIUM</option><option>HIGH</option></select>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="card">
+        <div class="cardhead" style="margin-bottom:16px">โหมดการทำงาน</div>
+        <div class="mode" id="modes">
+          <button class="active" data-mode="COOL">❄ COOL</button>
+          <button data-mode="DRY">💧 DRY</button>
+          <button data-mode="FAN">♧ FAN</button>
+          <button data-mode="AUTO">✧ AUTO</button>
+        </div>
+      </section>
+      <section class="card">
+        <div class="cardhead" style="margin-bottom:10px">สถานะระบบ</div>
+        <div class="info"><span class="muted">สถานะเครื่อง</span><strong id="powerState">ปิด</strong></div>
+        <div class="info"><span class="muted">โหมด</span><strong id="modeState">COOL</strong></div>
+        <div class="info"><span class="muted">พัดลม</span><strong id="fanState">AUTO</strong></div>
+        <div class="info"><span class="muted">การเชื่อมต่อ ESP32</span><strong><span class="dot"></span>ยังไม่เชื่อมต่อ</strong></div>
+      </section>
+    </aside>
+  </main>
+  <footer>AIR CONTROL · SMART HOME · ESP32<br><span id="connectionNote">โหมดทดลอง — ตั้งค่า ESP32 API ใน script.js เพื่อเชื่อมต่ออุปกรณ์</span></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
